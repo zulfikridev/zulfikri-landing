@@ -33,7 +33,7 @@ export function Navbar() {
           : "bg-transparent"
       )}
     >
-      <nav className="container-max section-padding py-0 flex items-center justify-between h-16">
+      <nav className="container-max px-6 md:px-12 lg:px-24 flex items-center justify-between h-16">
         <motion.a
           href="#"
           initial={{ opacity: 0, x: -20 }}
