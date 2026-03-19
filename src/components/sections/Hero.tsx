@@ -29,7 +29,7 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative z-10 container-max section-padding pt-32 pb-20">
+      <div className="relative z-10 container-max section-padding pt-20 pb-16">
         <div className="max-w-4xl">
           {/* Available badge */}
           <motion.div
