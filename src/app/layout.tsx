@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const siteUrl = "https://zulfikri.dev";
 
@@ -12,18 +13,18 @@ export const metadata: Metadata = {
     template: "%s | Zulfikri Md Zin",
   },
   description:
-    "Senior Full Stack Engineer with 6+ years building enterprise financial, healthcare, and travel systems using .NET 8, Angular, and Clean Architecture. Available for remote roles.",
+    "Senior Full Stack Engineer with 6+ years building enterprise financial, healthcare, and travel systems using .NET 8, Angular, and Clean Architecture. Open to new opportunities.",
   keywords: [
     "Full Stack Developer Malaysia",
     ".NET Angular Developer",
-    "Remote Software Engineer",
+    "Software Engineer for hire",
     "ASP.NET Core Developer",
     "Enterprise Software Engineer",
     "Clean Architecture .NET",
     "Angular Developer Malaysia",
     "Full Stack Engineer for hire",
-    "Remote .NET Developer",
-    "Software Engineer Malaysia remote",
+    ".NET Developer for hire",
+    "Software Engineer Malaysia",
   ],
   authors: [{ name: "Zulfikri Md Zin", url: siteUrl }],
   creator: "Zulfikri Md Zin",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Zulfikri Md Zin — Full Stack .NET & Angular Engineer",
     description:
-      "Senior Full Stack Engineer with 6+ years building enterprise financial, healthcare, and travel systems. Open to remote opportunities.",
+      "Senior Full Stack Engineer with 6+ years building enterprise financial, healthcare, and travel systems. Open to new opportunities.",
     siteName: "Zulfikri Md Zin",
     images: [
       {
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Zulfikri Md Zin — Full Stack .NET & Angular Engineer",
     description:
-      "Senior Full Stack Engineer with 6+ years building enterprise financial, healthcare, and travel systems. Open to remote opportunities.",
+      "Senior Full Stack Engineer with 6+ years building enterprise financial, healthcare, and travel systems. Open to new opportunities.",
     images: ["/og-image.png"],
   },
   alternates: {
@@ -125,10 +126,17 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <div className="noise-overlay" aria-hidden="true" />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme-preference');var d=t==='dark'||(!t||t==='system')&&window.matchMedia('(prefers-color-scheme: dark)').matches;if(d)document.documentElement.classList.add('dark');}catch(e){}})();`,
+          }}
+        />
+        <ThemeProvider>
+          <div className="noise-overlay" aria-hidden="true" />
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

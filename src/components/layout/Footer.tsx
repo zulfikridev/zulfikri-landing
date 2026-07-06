@@ -5,7 +5,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/5 bg-slate-950/50">
+    <footer className="border-t border-slate-200/60 dark:border-white/5 bg-slate-50/50 dark:bg-slate-950/50">
       <div className="container-max section-padding py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
@@ -13,8 +13,8 @@ export function Footer() {
               Z
             </div>
             <div>
-              <p className="text-sm font-semibold text-white">{CANDIDATE.name}</p>
-              <p className="text-xs text-slate-500 flex items-center gap-1">
+              <p className="text-sm font-semibold text-slate-900 dark:text-white">{CANDIDATE.name}</p>
+              <p className="text-xs text-slate-500 dark:text-slate-500 flex items-center gap-1">
                 <MapPin size={10} />
                 {CANDIDATE.location}
               </p>
@@ -24,7 +24,7 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <a
               href={`mailto:${CANDIDATE.email}`}
-              className="p-2 text-slate-500 hover:text-indigo-400 transition-colors"
+              className="p-2 text-slate-400 dark:text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
               aria-label="Email"
             >
               <Mail size={18} />
@@ -33,7 +33,7 @@ export function Footer() {
               href={CANDIDATE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-slate-500 hover:text-indigo-400 transition-colors"
+              className="p-2 text-slate-400 dark:text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin size={18} />
@@ -42,14 +42,14 @@ export function Footer() {
               href={CANDIDATE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 text-slate-500 hover:text-indigo-400 transition-colors"
+              className="p-2 text-slate-400 dark:text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors"
               aria-label="GitHub"
             >
               <Github size={18} />
             </a>
           </div>
 
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-slate-400 dark:text-slate-600">
             © {currentYear} {CANDIDATE.name}. All rights reserved.
           </p>
         </div>

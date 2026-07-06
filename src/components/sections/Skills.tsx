@@ -58,12 +58,12 @@ function SkillBar({
       className="group"
     >
       <div className="flex items-center justify-between mb-1.5">
-        <span className="text-sm text-slate-300 group-hover:text-white transition-colors">
+        <span className="text-sm text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
           {name}
         </span>
-        <span className="text-xs text-slate-600 font-mono">{level}%</span>
+        <span className="text-xs text-slate-400 dark:text-slate-600 font-mono">{level}%</span>
       </div>
-      <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden">
+      <div className="h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
@@ -88,11 +88,11 @@ export function Skills() {
           className="mb-16"
         >
           <p className="section-label mb-3">Technical Skills</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             The Full{" "}
             <span className="text-gradient">Technical Stack</span>
           </h2>
-          <p className="text-slate-400 max-w-2xl text-lg">
+          <p className="text-slate-600 dark:text-slate-400 max-w-2xl text-lg">
             6 years of depth across the entire software development lifecycle — from database schema to polished UI.
           </p>
         </motion.div>
@@ -109,7 +109,7 @@ export function Skills() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <span className="text-2xl">{category.icon}</span>
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                   {category.label}
                 </h3>
               </div>
